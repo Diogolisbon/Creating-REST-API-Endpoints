@@ -6,48 +6,56 @@ Frameworks: React v17.0.2, Node v14.17.0, Express v4.16.1
 Length: 50 minutes
 Author: August Shah
 Publish Date: Nov 1, 2021
-Introduction
+
+**Introduction**
+
 As the local book club president, you need an efficient way to keep track of the book’s title and reading schedule. In this tutorial, you will put the concepts you learned in the What is REST? article into practice by creating endpoints in React that connect to the back-end API, giving CRUD (create, read, update, delete) functionality to your book club’s application.
 
 By the end of this tutorial you have implemented the following features:
 
-Retrieve the initial books list.
-Add a book and its reading schedule to the list of books.
-Update a book’s title and/or reading schedule.
-Delete a book from the list of books.
-Project Setup
-To get started with this tutorial, make sure you download the starting and solution code. When you complete the steps in this tutorial, compare your code with the code in the solution-code folder and see how you did!
+-Retrieve the initial books list.
+-Add a book and its reading schedule to the list of books.
+-Update a book’s title and/or reading schedule.
+-Delete a book from the list of books.
+-Project Setup
+-To get started with this tutorial, make sure you download the starting and solution code. When you complete the steps in this tutorial, compare your code with the code in the solution-code folder and see how you did!
 
 The starting-code folder contains the following sub-folders:
 
-frontend
-backend
+**frontend**
+**backend**
 Run the following command in both sub-folders separately to install the dependencies:
 
-npm install
+==npm install==
 To run the application, you will need to have two separate terminal windows or tabs open: one for the frontend folder and the other for the backend folder. You will want to start the application in backend folder, then the frontend folder. You can start the application with the following command:
 
-npm run start
+==npm run start==
 You will get a notification in the terminal window when starting the server in the frontend folder, stating that the port 3000 is in use and asking if you would like to use another port like below:
 
-Would you like to run the app on another port instead? › (Y/n)
+==Would you like to run the app on another port instead? › (Y/n)==
 Type y in the terminal prompt to use a different port.
 
 You are ready to get started with the tutorial steps! Note that the start command runs nodemon for the backend server and react-scripts for the frontend server. Any code changes you make in these folders will trigger the application to re-render automatically.
 
 Note: Throughout this project, you will encounter a variety of errors since the code is using functions that have not yet been defined and exported. As you create the functions by following the instruction below, the errors will resolve one by one. By the end of this project, all of the errors should be resolved!
 
-Getting Started
+**Getting Started**
 In the following steps, we will create functions in frontend/src/api/books.js that will be used to interact with the back-end API using the CRUD pattern. Each function will be exported to be imported and executed in the front-end of the application. The purpose of exporting our functions is to ensure that we follow the DRY (Don’t Repeat Yourself) principle. Not isolating the functions to a specific component allows us to reuse them in other parts of the application without having to write them again.
 
 Before we start coding, you will want to familiarize yourself with the code of the following files in the starting-code folder:
 
-frontend/src/components/Book.js
+==frontend/src/components/Book.js==
+
 This file contains the front-end code that will use the functions we will define in this tutorial to update and delete a book. It also contains JSX code that will render the <Book> component.
-frontend/src/components/Booklist.js
+ 
+ 
+==frontend/src/components/Booklist.js==
 This file contains front-end code that will use the functions we will define in this tutorial to get the list of books and add a new book. It also contains JSX code that will render the <BookSchedule> component.
-backend/routes/Books.js
+ 
+ 
+==backend/routes/Books.js==
 This file contains back-end code that defines the API endpoints we will use to do the CRUD operations.
+ 
 Creating Books
 We have a list of books that need to be added for our book club!
 
